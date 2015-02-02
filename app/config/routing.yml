@@ -1,0 +1,4 @@
+perfect_place_core:
+    resource: "@PerfectPlaceCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+

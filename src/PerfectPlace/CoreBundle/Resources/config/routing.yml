@@ -1,0 +1,3 @@
+perfect_place_core_homepage:
+    path:     /
+    defaults: { _controller: PerfectPlaceCoreBundle:Default:index }
