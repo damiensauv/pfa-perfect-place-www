@@ -1,0 +1,16 @@
+# Composer files
+/vendor
+composer.phar
+composer.lock
+/bin/
+
+# Symfony files
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/app/config/parameters.yml
+
+# IDE and Editors
+/.idea
+*~
