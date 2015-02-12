@@ -1,0 +1,23 @@
+PerfectPlace\UserBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: PerfectPlace\UserBundle\Entity\UserRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        email:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        pseudo:
+            type: string
+            length: 255
+        hash:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
