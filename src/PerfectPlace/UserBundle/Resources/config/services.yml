@@ -1,0 +1,7 @@
+parameters:
+#    perfect_place_user.example.class: PerfectPlace\UserBundle\Example
+
+services:
+#    perfect_place_user.example:
+#        class: %perfect_place_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
