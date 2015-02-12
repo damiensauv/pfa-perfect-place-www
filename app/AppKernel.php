@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new PerfectPlace\CoreBundle\PerfectPlaceCoreBundle(),
 	    new Bmatzner\FoundationBundle\BmatznerFoundationBundle(),
+            new PerfectPlace\UserBundle\PerfectPlaceUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
