@@ -1,3 +1,7 @@
-perfect_place_user_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: PerfectPlaceUserBundle:Default:index }
+perfect_place_user_register:
+    path:     /register
+    defaults: { _controller: PerfectPlaceUserBundle:Default:register }
+
+perfect_place_user_login:
+    path:     /login
+    defaults: { _controller: PerfectPlaceUserBundle:Default:login }
