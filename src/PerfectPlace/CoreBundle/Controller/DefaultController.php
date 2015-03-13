@@ -47,18 +47,18 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-
- /*
-    * A JSON request example :
-    {
-    "origin": [12, 34],
-    "radius": 15,
-    "criterias": {
-    "transport": 50,
-    "nature": 25
-    }
-    }
-*/
+            /*
+                * A JSON request example :
+                {
+                "origin": [12, 34],
+                "radius": 15,
+                "criterias":
+                {
+                    "transport": 50,
+                    "nature": 25
+                 }
+                }
+            */
 
 
         }
