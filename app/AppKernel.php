@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new PerfectPlace\CoreBundle\PerfectPlaceCoreBundle(),
 	    new Bmatzner\FoundationBundle\BmatznerFoundationBundle(),
+	    new Bmatzner\JQueryBundle\BmatznerJQueryBundle(),
             new PerfectPlace\UserBundle\PerfectPlaceUserBundle(),
         );
 
