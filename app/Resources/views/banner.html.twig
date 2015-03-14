@@ -1,21 +1,33 @@
-
 {% block body %}
-
     <div class="row">
-        <div class="large-3 columns">
-            <h1>
-                <img src="{{ asset('public/img/perfect_place.png') }}"/>
-            </h1>
-        </div>
-        <div class="large-9 columns">
-            <ul class="inline-list right">
-                <li><a href="#">Section 1</a></li>
-                <li><a href="#">Section 2</a></li>
-                <li><a href="#">Section 3</a></li>
-                <li><a href="#">Section 4</a></li>
-            </ul>
+        <div class="large-12 columns">
+
+            <div class="large-3 medium-4 columns hide-for-small no-padding">
+                <img src="{{ asset('public/img/perfect_place.png') }}" />
+            </div>
+
+            <div class="large-9 medium-8 columns no-padding">
+                <div class="contain-to-grid">
+                    <nav class="top-bar" data-topbar role="navigation">
+
+                        <ul class="title-area">
+                            <li class="name show-for-small"><h1><a href="#"><span class="blue">P</span>er<span class="green">f</span>ect<span
+                                                class="red">P</span>lace</a></h1></li>
+                            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                        </ul>
+
+                        <section class="top-bar-section">
+                            <ul class="nav-line right">
+                                <li><a href="#">Particulier</a></li>
+                                <li><a href="#">Professionnel</a></li>
+                            </ul>
+                        </section>
+
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 
-
+    <br>
 {% endblock %}

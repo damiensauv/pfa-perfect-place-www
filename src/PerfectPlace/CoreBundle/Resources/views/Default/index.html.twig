@@ -1,54 +1,206 @@
-{% extends "base.html.twig"  %}
+{% extends "base.html.twig" %}
 
 {% block body %}
 
-
-<div class="row" style="height:100%; width:100%;">
-
-    <div class="large-9 push-3 columns" style="height: 100%;">
-
-        <h3>Map</h3>
-
-        <div  id="map-canvas" style="height:80%;"></div>
-
-
-
-
-    </div>
-
-
-
-
-    <div class="large-3 pull-9 columns">
-
-        {{ form(form) }}
-
-        <p><img src="http://placehold.it/320x240&text=Ad"/></p>
-
-    </div>
-
-</div>
-
-
-
-
-<footer class="row">
-    <div class="large-12 columns">
-        <hr/>
-        <div class="row">
-            <div class="large-6 columns">
-                <p>© Copyright</p>
-            </div>
-            <div class="large-6 columns">
-                <ul class="inline-list right">
-                    <li><a href="#">Section 1</a></li>
-                    <li><a href="#">Section 2</a></li>
-                    <li><a href="#">Section 3</a></li>
-                    <li><a href="#">Section 4</a></li>
-                </ul>
-            </div>
+    <div class="row">
+        {# BTN pour masquer / afficher les parametres #}
+        <div id="affiche" class="toggleParameters large-3 columns">
+                <span id="affichage-icone" class="fa fa-2x fa-toggle-on green" title="Masquer les
+                paramètres"></span>
         </div>
     </div>
-</footer>
+
+    <div class="row">
+        <div class="large-12 columns" data-equalizer>
+
+            <div id="parameters" class="large-3 medium-3 columns no-padding" data-equalizer-watch style="border: 1px
+            solid red;">
+                <div class="large-12 columns panel">
+                    {{ form_start(form) }}
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Mobilité
+                            <div class="range-slider round" data-slider data-options="display_selector: #mobilite;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.mobilite, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="mobilite"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Environement
+                            <div class="range-slider round" data-slider data-options="display_selector: #environement;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.environement, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="environement"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Culture
+                            <div class="range-slider round" data-slider data-options="display_selector: #culture;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.culture, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="culture"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Nocturne
+                            <div class="range-slider round" data-slider data-options="display_selector: #nocturne;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.nocturne, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="nocturne"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Commerce
+                            <div class="range-slider round" data-slider data-options="display_selector: #commerce;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.commerce, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="commerce"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Mobilité
+                            <div class="range-slider round" data-slider data-options="display_selector: #mobilite;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.sante, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="mobilite"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-11 small-10 medium-11 columns">
+                            Rayon
+                            <div class="range-slider round" data-slider data-options="display_selector: #rayon;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                {{ form_row(form.rayon, {
+                                'type' : 'hidden',
+                                'label' : ' ',
+                                'attr' : { 'min' : '0', 'max' : '1000' }}) }}
+                            </div>
+                        </div>
+                        <div class="large-1 small-2 medium-1 columns no-padding">
+                            <span id="rayon"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-12 columns form-type">
+                            {{ form_row(form.type) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-12 columns text-center">
+                            {{ form_row(form.save) }}
+                        </div>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+            {# Right columns MAP #}
+            <div id="map" class="large-9 medium-9 columns" data-equalizer-watch style="border: 1px solid red;">
+                <div class="row">
+                    <div class="large-12 columns no-padding" style="border: 1px solid blue;">
+                        <h3 class="text-center">Map</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns no-padding" style="border: 1px solid yellowgreen;">
+                        <div id="GoogleMap" style="border: 1px solid darkred;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {# Encart publicitaire #}
+    <div class="row">
+        <div class="large-3 medium 3 columns ad">
+            <img src="http://placehold.it/320x240&text=Ad" />
+        </div>
+    </div>
+
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr />
+            <div class="row">
+                <div class="large-6 medium-6 columns">
+                    <p>PerfectPlace © Copyright</p>
+                </div>
+                <div class="large-6 medium-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 {% endblock %}
+
+{#<div class="range-slider" data-slider>
+                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                    <span class="range-slider-active-segment"></span>
+                    {{ form_row(form.mobilite, {
+                    'type' : 'hidden',
+                    'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                </div>#}

@@ -1,41 +1,80 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Perfect Place{% endblock %}</title>
+<!doctype html>
+<html class="no-js" lang="{{ app.request.locale }}">
 
-        {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfoundation/css/foundation.min.css') }}" />
-        {% endblock %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/img/favicon.ico') }}" />
+    <title>{% block title %}Perfect Place{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('bundles/bmatznerfoundation/css/foundation.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfoundation/css/normalize.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/common/css/base.css') }}" />
+    {% endblock %}
+</head>
+
+<body>
 
 
-        <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf5ectAep4TV8yRQoUqnNWfc3cKm6ivJs">
-        </script>
-        <script type="text/javascript">
-            function initialize() {
-                var mapOptions = {
-                    center: { lat: 50.635568, lng: 3.0620460000000094},
-                    zoom: 15
-                };
-                var map = new google.maps.Map(document.getElementById('map-canvas'),
-                        mapOptions);
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
+{% include "banner.html.twig" %}
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('public/img/favicon.ico') }}" />
-    </head>
-    <body>
 
-    {% include "banner.html.twig" %}
+{% block body %}{% endblock %}
 
-        {% block body %}
-        {% endblock %}
 
-        {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/bmatznerjquery/js/jquery.min.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/bmatznerfoundation/js/foundation.min.js') }}"></script>
-        {% endblock %}
-    </body>
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/bmatznerjquery/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bmatznerfoundation/js/vendor/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bmatznerfoundation/js/foundation.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('bundles/bmatznerfoundation/js/foundation/foundation.topbar.js') }}"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf5ectAep4TV8yRQoUqnNWfc3cKm6ivJs"></script>
+
+    <script type="text/javascript">
+        $(document).foundation();
+
+        function initialize() {
+            var mapOptions = {
+                center: { lat: 50.635568, lng: 3.0620460000000094},
+                zoom: 15
+            };
+            var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+
+        /* Display / hide   Parameters */
+        $( document ).ready(function() {
+            $('#affiche').click(function() {
+                var clicks = $(this).data('clicks');
+                if (clicks) {
+                    $('#parameters').show();
+                    $('#map').removeClass('large-12');
+                    $('#map').addClass('large-9');
+                    $('#affichage-icone').removeClass('red');
+                    $('#affichage-icone').addClass('green');
+                    $('#affichage-icone').removeClass('fa-toggle-off');
+                    $('#affichage-icone').addClass('fa-toggle-on');
+                    $('#affichage-icone').prop('title',  'Masquer les paramètres');
+                }
+                else {
+                    $('#parameters').hide();
+                    $('#map').removeClass('large-9');
+                    $('#map').addClass('large-12');
+                    $('#affichage-icone').removeClass('green');
+                    $('#affichage-icone').addClass('red');
+                    $('#affichage-icone').removeClass('fa-toggle-on');
+                    $('#affichage-icone').addClass('fa-toggle-off');
+                    $('#affichage-icone').prop('title', 'Afficher les paramètres');
+                }
+                $(this).data("clicks", !clicks);
+            });
+        });
+    </script>
+{% endblock %}
+</body>
 </html>
