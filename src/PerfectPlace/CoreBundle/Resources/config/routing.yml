@@ -1,11 +1,18 @@
 perfect_place_core_homepage:
-    path:     /
-    defaults: { _controller: PerfectPlaceCoreBundle:Default:index }
+    path:             /
+    defaults:
+        _controller:  PerfectPlaceCoreBundle:Default:index
 
-perfect_palce_core_professionnel:
-    path:     /professionel
-    defaults: { _controller: PerfectPlaceCoreBundle:Default:profesionnel }
+perfect_place_core_professionnel:
+    path:             /professionnel
+    defaults:
+        _controller:  PerfectPlaceCoreBundle:Default:professionnel
+    requirements:
+        _method:      GET
 
-perfect_palce_core_particuluer:
-    path:     /particulier
-    defaults: { _controller: PerfectPlaceCoreBundle:Defauprolt:particulier }
+perfect_place_core_particulier:
+    path:             /particulier
+    defaults:
+        _controller:  PerfectPlaceCoreBundle:Default:index
+    requirements:
+        _method:      GET
