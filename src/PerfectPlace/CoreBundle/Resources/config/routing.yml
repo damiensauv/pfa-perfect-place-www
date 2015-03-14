@@ -1,3 +1,11 @@
 perfect_place_core_homepage:
     path:     /
     defaults: { _controller: PerfectPlaceCoreBundle:Default:index }
+
+perfect_palce_core_professionnel:
+    path:     /professionel
+    defaults: { _controller: PerfectPlaceCoreBundle:Default:profesionnel }
+
+perfect_palce_core_particuluer:
+    path:     /particulier
+    defaults: { _controller: PerfectPlaceCoreBundle:Defauprolt:particulier }

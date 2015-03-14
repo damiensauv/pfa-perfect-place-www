@@ -13,171 +13,161 @@
     <div class="row">
         <div class="large-12 columns" data-equalizer>
 
-            <div id="parameters" class="large-3 medium-3 columns no-padding" data-equalizer-watch style="border: 1px
-            solid red;">
-                <div class="large-12 columns panel">
-                    {{ form_start(form) }}
+            <div class="large-12 param-map columns no-padding">
+                <div id="parameters" class="large-3 medium-3 columns no-padding" data-equalizer-watch>
+                    <div class="large-12 columns panel">
+                        {{ form_start(form) }}
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Mobilité
-                            <div class="range-slider round" data-slider data-options="display_selector: #mobilite;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.mobilite, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Mobilité
+                                <div class="range-slider round" data-slider data-options="display_selector:
+                                #mobilite;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.mobilite, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="mobilite"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="mobilite"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Environement
-                            <div class="range-slider round" data-slider data-options="display_selector: #environement;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.environement, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Environement
+                                <div class="range-slider round" data-slider
+                                     data-options="display_selector: #environement;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.environement, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="environement"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="environement"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Culture
-                            <div class="range-slider round" data-slider data-options="display_selector: #culture;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.culture, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Culture
+                                <div class="range-slider round" data-slider data-options="display_selector: #culture;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.culture, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="culture"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="culture"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Nocturne
-                            <div class="range-slider round" data-slider data-options="display_selector: #nocturne;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.nocturne, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                Nocturne
+                                <div class="range-slider round" data-slider data-options="display_selector: #nocturne;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.nocturne, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="nocturne"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="nocturne"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Commerce
-                            <div class="range-slider round" data-slider data-options="display_selector: #commerce;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.commerce, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Commerce
+                                <div class="range-slider round" data-slider data-options="display_selector: #commerce;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.commerce, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="commerce"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="commerce"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Mobilité
-                            <div class="range-slider round" data-slider data-options="display_selector: #mobilite;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.sante, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '10' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Sante
+                                <div class="range-slider round" data-slider data-options="display_selector: #sante;start: 0; end: 100; step: 25;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.sante, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="sante"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="mobilite"></span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-11 small-10 medium-11 columns">
-                            Rayon
-                            <div class="range-slider round" data-slider data-options="display_selector: #rayon;">
-                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                                <span class="range-slider-active-segment"></span>
-                                {{ form_row(form.rayon, {
-                                'type' : 'hidden',
-                                'label' : ' ',
-                                'attr' : { 'min' : '0', 'max' : '1000' }}) }}
+                        <div class="row">
+                            <div class="large-11 small-10 medium-11 columns no-padding padd">
+                                &nbsp;Rayon
+                                <div class="range-slider round" data-slider data-options="display_selector: #rayon;
+                                start: 0; end: 5000; step: 1;">
+                                    <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                    <span class="range-slider-active-segment"></span>
+                                    {{ form_row(form.rayon, {
+                                    'type' : 'hidden',
+                                    'label' : ' ',
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="large-1 small-2 medium-1 columns no-padding slide-value">
+                                <span id="rayon"></span>
                             </div>
                         </div>
-                        <div class="large-1 small-2 medium-1 columns no-padding">
-                            <span id="rayon"></span>
+
+                        <div class="row">
+                            <div class="large-12 columns form-type">
+                                {{ form_row(form.type) }}
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-12 columns form-type">
-                            {{ form_row(form.type) }}
+                        <div class="row">
+                            <div class="large-12 columns text-center white">
+                                {{ form_row(form.Rechercher) }}
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="large-12 columns text-center">
-                            {{ form_row(form.save) }}
-                        </div>
-                    </div>
-
-                    {{ form_end(form) }}
-                </div>
-            </div>
-
-            {# Right columns MAP #}
-            <div id="map" class="large-9 medium-9 columns" data-equalizer-watch style="border: 1px solid red;">
-                <div class="row">
-                    <div class="large-12 columns no-padding" style="border: 1px solid blue;">
-                        <h3 class="text-center">Map</h3>
+                        {{ form_end(form) }}
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="large-12 columns no-padding" style="border: 1px solid yellowgreen;">
-                        <div id="GoogleMap" style="border: 1px solid darkred;"></div>
+                {# Right columns MAP #}
+                <div id="map" class="large-9 medium-9 columns" data-equalizer-watch {#style="border: 1px solid red;"#}>
+                    <div class="row">
+                        <div class="large-12 columns no-padding" {#style="border: 1px solid yellowgreen;"#}>
+                            <div id="GoogleMap" {#style="border: 1px solid darkred;"#}></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-
-    {# Encart publicitaire #}
-    <div class="row">
-        <div class="large-3 medium 3 columns ad">
-            <img src="http://placehold.it/320x240&text=Ad" />
-        </div>
-    </div>
-
 
     <footer class="row">
         <div class="large-12 columns">

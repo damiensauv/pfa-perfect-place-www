@@ -38,7 +38,7 @@ class DefaultController extends Controller
             ->add('sante', 'integer')
             ->add('type','choice', array('choices' => $typefield))
             ->add('rayon', 'integer')
-            ->add('save', 'submit')
+            ->add('Rechercher', 'submit')
             ->getForm();
 
         $form->handleRequest($request);
@@ -64,6 +64,16 @@ class DefaultController extends Controller
         }
 
         return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView()));
+    }
+
+    public function profesionnelAction(Request $request)
+    {
+        return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array());
+    }
+
+    public function particulierAction(Request $request)
+    {
+        return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array());
     }
 }
 
