@@ -49,7 +49,8 @@
 
         /* Display / hide   Parameters */
         $( document ).ready(function() {
-            $('#affiche').click(function() {
+            $('#affiche').click(function()
+            {
                 var clicks = $(this).data('clicks');
                 if (clicks) {
                     $('#parameters').fadeIn("slow");
@@ -75,8 +76,10 @@
                     $('#affichage-icone').addClass('fa-toggle-off');
                     $('#affichage-icone').prop('title', 'Afficher les paramètres');
                 }
+                $(document).foundation();
                 $(this).data("clicks", !clicks);
             });
+
             $('#affiche-nav').click(function() {
                 var clicks = $(this).data('clicks');
                 if (clicks) {
@@ -90,6 +93,9 @@
                     $('#affichage-icone').removeClass('fa-toggle-off');
                     $('#affichage-icone').addClass('fa-toggle-on');
                     $('#affichage-icone').prop('title',  'Masquer les paramètres');
+                    $("a").on("mouseover",function(){
+                        $("span[data-selector=" + $(this).attr('id') + "]").html('Masquer les paramètres');
+                    });
                 }
                 else {
                     $('#parameters').hide();
@@ -102,9 +108,49 @@
                     $('#affichage-icone').removeClass('fa-toggle-on');
                     $('#affichage-icone').addClass('fa-toggle-off');
                     $('#affichage-icone').prop('title', 'Afficher les paramètres');
+                    $("a").on("mouseover",function(){
+                        $("span[data-selector=" + $(this).attr('id') + "]").html('Afficher les paramètres');
+                    });
                 }
+
                 $(this).data("clicks", !clicks);
             });
+
+
+            $('#proxi').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_commerce').val(value);
+            });
+            $('#mobi').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_mobilite').val(value);
+            });
+            $('#envi').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_environement').val(value);
+            });
+            $('#cultu').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_culture').val(value);
+            });
+            $('#noctu').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_nocturne').val(value);
+            });
+            $('#san').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_sante').val(value);
+            });
+            $('#trans').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_transport').val(value);
+            });
+            $('#ra').on('change', function(){
+                var value = $(this).attr('data-slider');
+                $('#form_rayon').val(value);
+            });
+
+
         });
     </script>
 {% endblock %}
