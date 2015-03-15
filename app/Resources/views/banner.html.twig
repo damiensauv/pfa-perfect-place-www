@@ -11,18 +11,34 @@
                     <nav class="top-bar" data-topbar role="navigation">
 
                         <ul class="title-area">
-                            <li class="name show-for-small"><h1><a href="#"><span class="blue">P</span>er<span class="green">f</span>ect<span
+                            <li class="name show-for-small"><h1><a href="#"><span class="blue">P</span>er<span
+                                                class="green">f</span>ect<span
                                                 class="red">P</span>lace</a></h1></li>
                             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                         </ul>
 
                         <section class="top-bar-section">
                             <ul class="nav-line right">
-                                <li class="hide-for-small"><a id="affiche-nav"><i id="affichage-icone" class="fa
-                                fa-toggle-on
-                                                                              green"></i></a></li>
-                                <li><a href="{{ path('perfect_place_core_particulier') }}">Particulier</a></li>
-                                <li><a href="{{ path('perfect_place_core_professionnel') }}">Professionnel</a></li>
+                                <li class="hide-for-small">
+                                    <a id="affiche-nav" title="Masquer les paramètres" data-tooltip
+                                       data-options="disable_for_touch:true;show_on:large;" aria-haspopup="true">
+                                        <i id="affichage-icone" class="fa fa-toggle-on green"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('perfect_place_core_particulier') }}" data-tooltip
+                                       data-options="disable_for_touch:true;show_on:large;" aria-haspopup="true"
+                                       title="Page à destination des particuliers">
+                                        Particulier
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('perfect_place_core_professionnel') }}" data-tooltip
+                                       data-options="disable_for_touch:true;show_on:large;" aria-haspopup="true"
+                                       title="Page à destination des professionnels">
+                                        Professionnel
+                                    </a>
+                                </li>
                             </ul>
                         </section>
 
