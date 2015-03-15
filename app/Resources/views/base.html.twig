@@ -31,20 +31,10 @@
     <script type="text/javascript" src="{{ asset('bundles/bmatznerfoundation/js/foundation.min.js') }}"></script>
     <script type="text/javascript"
             src="{{ asset('bundles/bmatznerfoundation/js/foundation/foundation.topbar.js') }}"></script>
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf5ectAep4TV8yRQoUqnNWfc3cKm6ivJs"></script>
+
 
     <script type="text/javascript">
         $(document).foundation();
-
-        function initialize() {
-            var mapOptions = {
-                center: { lat: 50.635568, lng: 3.0620460000000094},
-                zoom: 15
-            };
-            var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
 
 
         /* Display / hide   Parameters */
