@@ -7,12 +7,8 @@ perfect_place_core_professionnel:
     path:             /professionnel
     defaults:
         _controller:  PerfectPlaceCoreBundle:Default:professionnel
-    requirements:
-        _method:      GET
 
 perfect_place_core_particulier:
     path:             /particulier
     defaults:
         _controller:  PerfectPlaceCoreBundle:Default:index
-    requirements:
-        _method:      GET
