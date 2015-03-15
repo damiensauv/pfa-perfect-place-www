@@ -10,8 +10,6 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $typefield = array('famille' => 'Famille', 'etudiant' => 'étudiant', 'age' => 'personne age',
-            'handicape' => 'handicape');
         $form = $this->createFormBuilder()
             ->add('mobilite', 'integer')
             ->add('environement', 'integer')
@@ -19,7 +17,6 @@ class DefaultController extends Controller
             ->add('nocturne', 'integer')
             ->add('commerce', 'integer')
             ->add('sante', 'integer')
-            ->add('type', 'choice', array('choices' => $typefield))
             ->add('rayon', 'integer')
             ->add('Rechercher', 'submit')
             ->getForm();
