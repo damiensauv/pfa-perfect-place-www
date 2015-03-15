@@ -50,6 +50,7 @@ class DefaultController extends Controller
             ->add('transport', 'integer')
             ->add('nocturne', 'integer')
             ->add('sante', 'integer')
+            ->add('culture', 'integer')
             ->add('rayon', 'integer')
             ->add('Rechercher', 'submit')
             ->getForm();
