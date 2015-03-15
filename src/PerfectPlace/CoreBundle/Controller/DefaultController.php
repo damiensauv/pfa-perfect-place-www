@@ -28,6 +28,11 @@ class DefaultController extends Controller
 
         if ($form->isValid()) {
             $data = $form->getData();
+
+
+            var_dump($data);
+
+
             /*
                 * A JSON request example :
                 {

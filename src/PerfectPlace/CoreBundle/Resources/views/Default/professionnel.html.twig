@@ -164,6 +164,29 @@
 
 {% endblock %}
 
+{% block javascripts%}
+
+    {{ parent() }}
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf5ectAep4TV8yRQoUqnNWfc3cKm6ivJs"></script>
+
+    <script type="text/javascript">
+
+        function initialize() {
+            var mapOptions = {
+                center: { lat: 50.635568, lng: 3.0620460000000094},
+                zoom: 15
+            };
+            var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+
+{% endblock %}
+
+
 {#<div class="range-slider" data-slider>
                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                     <span class="range-slider-active-segment"></span>
