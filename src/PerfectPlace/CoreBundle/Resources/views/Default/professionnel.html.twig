@@ -5,8 +5,7 @@
     <div class="row">
         {# BTN pour masquer / afficher les parametres #}
         <div id="affiche" class="toggleParameters large-3 columns show-for-small">
-                <span id="affichage-icone" class="fa fa-2x fa-toggle-on green" title="Masquer les
-                paramètres"></span>
+                <span id="affichage-icone" class="fa fa-2x fa-toggle-on green" title="Masquer les  paramètres"></span>
         </div>
     </div>
 
@@ -15,21 +14,16 @@
 
             <div class="large-12 param-map columns no-padding">
                 <div id="parameters" class="large-3 medium-3 columns no-padding">
-                    <div class="large-12 columns panel"data-equalizer-watch>
+                    <div class="large-12 columns panel" data-equalizer-watch>
                         {{ form_start(form) }}
 
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Zone commerçante
-                                <div class="range-slider round" id="proxi" data-slider data-options="display_selector:
-                                #commerce;start: 0; end: 100; step: 25;">
+                                <div class="range-slider round" id="proxi" data-slider data-options="display_selector: #commerce;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.commerce, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '50'
-                                    }) }}
+                                    {{ form_row(form.commerce, { 'type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -40,16 +34,10 @@
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Accessibilité
-                                <div class="range-slider round" id="trans" data-slider data-options="display_selector:
-                                #transport;
-                                start: 0; end: 100; step: 25;">
+                                <div class="range-slider round" id="trans" data-slider data-options="display_selector: #transport;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.transport, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '50'
-                                    }) }}
+                                    {{ form_row(form.transport, { 'type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -60,15 +48,10 @@
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Activité nocturne
-                                <div class="range-slider round" id="noctu" data-slider data-options="display_selector:
-                                #nocturne;start: 0; end: 100; step: 25;">
+                                <div class="range-slider round" id="noctu" data-slider data-options="display_selector: #nocturne;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.nocturne, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '50'
-                                    }) }}
+                                    {{ form_row(form.nocturne, {' type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -79,16 +62,10 @@
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Professionnel de la santé
-                                <div class="range-slider round" id="san" data-slider data-options="display_selector:
-                                #sante;
-                                start: 0; end: 100; step: 25;">
+                                <div class="range-slider round" id="san" data-slider data-options="display_selector: #sante;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.sante, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '50'
-                                    }) }}
+                                    {{ form_row(form.sante, { 'type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -99,16 +76,10 @@
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Activité culturel
-                                <div class="range-slider round" id="cultu" data-slider data-options="display_selector:
-                                #culture;
-                                start: 0; end: 100; step: 25;">
+                                <div class="range-slider round" id="cultu" data-slider data-options="display_selector: #culture;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.culture, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '50'
-                                    }) }}
+                                    {{ form_row(form.culture, {'type' : 'hidden','label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -119,16 +90,10 @@
                         <div class="row">
                             <div class="large-11 small-10 medium-11 columns no-padding padd">
                                 &nbsp;Rayon
-                                <div class="range-slider round" id="ra" data-slider data-options="display_selector:
-                                #rayon;
-                                start: 0; end: 5000; step: 1;">
+                                <div class="range-slider round" id="ra" data-slider data-options="display_selector: #rayon; start: 0; end: 5000; step: 1;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.rayon, {
-                                    'type' : 'hidden',
-                                    'label' : ' ',
-                                    'value' : '2500'
-                                    }) }}
+                                    {{ form_row(form.rayon, {'type' : 'hidden', 'label' : ' ', 'value' : '2500' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">

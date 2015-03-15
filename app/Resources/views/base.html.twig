@@ -102,11 +102,12 @@
                         $("span[data-selector=" + $(this).attr('id') + "]").html('Afficher les paramètres');
                     });
                 }
-
                 $(this).data("clicks", !clicks);
             });
 
 
+
+            /* SLIDER VALUE */
             $('#proxi').on('change', function(){
                 var value = $(this).attr('data-slider');
                 $('#form_commerce').val(value);
