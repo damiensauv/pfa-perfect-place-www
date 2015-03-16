@@ -28,8 +28,7 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-            $long = floatval($data['longitude']);
-            $lat = floatval($data['latitude']);
+         
 
             print_r($data);
 
