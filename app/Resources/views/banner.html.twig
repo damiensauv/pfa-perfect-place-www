@@ -18,7 +18,7 @@
                         </ul>
 
                         <section class="top-bar-section">
-                            <ul class="nav-line right">
+                            <ul class="nav-line right hide-for-small">
                                 <li class="hide-for-small">
                                     <a id="affiche-nav" title="Masquer les paramètres" data-tooltip
                                        data-options="disable_for_touch:true;show_on:large;" aria-haspopup="true">
@@ -35,6 +35,21 @@
                                 <li>
                                     <a href="{{ path('perfect_place_core_professionnel') }}" data-tooltip
                                        data-options="disable_for_touch:true;show_on:large;" aria-haspopup="true"
+                                       title="Page à destination des professionnels">
+                                        Professionnel
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav-line right show-for-small">
+                                <li>
+                                    <a href="{{ path('perfect_place_core_particulier') }}"
+                                       title="Page à destination des particuliers">
+                                        Particulier
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('perfect_place_core_professionnel') }}"
                                        title="Page à destination des professionnels">
                                         Professionnel
                                     </a>
