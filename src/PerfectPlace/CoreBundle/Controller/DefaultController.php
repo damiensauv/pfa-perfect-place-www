@@ -24,8 +24,7 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $data = $form->getData();
 
             //$donne['origin'] = array(50.6355677, 3.0620463);
@@ -36,7 +35,7 @@ class DefaultController extends Controller
             $donne['criterias'] = array(
                 'subway' => $data['mobilite'],
                 'bicycle_rental' => $data['mobilite'],
-                'bus'  => $data['mobilite'],
+                'bus' => $data['mobilite'],
                 'parking' => $data['mobilite'],
                 'tramway' => $data['mobilite'],
                 'recycling' => $data['environement'],
@@ -48,18 +47,18 @@ class DefaultController extends Controller
                 'theatre' => $data['culture'],
                 'stadium' => $data['culture'],
                 'museum' => $data['culture'],
-                'zoo'  => $data['culture'],
-                'bar'  => $data['nocturne'],
+                'zoo' => $data['culture'],
+                'bar' => $data['nocturne'],
                 'cafe' => $data['nocturne'],
                 'fast_food' => $data['nocturne'],
-                'pub'  => $data['nocturne'],
+                'pub' => $data['nocturne'],
                 'restaurant' => $data['nocturne'],
                 'casino' => $data['nocturne'],
                 'night_club' => $data['nocturne'],
                 'bank' => $data['commerce'],
                 'bakery' => $data['commerce'],
-                'store'  => $data['commerce'],
-                'mall'  => $data['commerce'],
+                'store' => $data['commerce'],
+                'mall' => $data['commerce'],
                 'supermarket' => $data['commerce'],
                 'clinic' => $data['sante'],
                 'doctors' => $data['sante'],
@@ -94,19 +93,23 @@ class DefaultController extends Controller
             $radius = $decode['areas'][$i]['radius'];
             */
 
-            $lat = $_GET['lat'];
-            $long = $_GET['long'];
+            if (isset($_GET['lat']) && isset($_GET['long']))
+            {
+                $lat = $_GET['lat'];
+                $long = $_GET['long'];
+                $coord = array("lat" => $lat, "long" => $long);
+            } else {
+                $coord = array("lat" => 50.6355677, "long" => 3.06204630000002);
+            }
 
-            $coord = array("lat" => $lat , "long" =>  $long);
-
-            /*print_r($coord);*/
+            print_r($coord);
 
             return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
 //            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
 
         }
 
-        $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
+        $coord = array("lat" => 50.6355677, "long" => 3.06204630000002);
 
 
         return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
@@ -126,8 +129,7 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $data = $form->getData();
 
 
@@ -139,7 +141,7 @@ class DefaultController extends Controller
             $donne['criterias'] = array(
                 'subway' => $data['mobilite'],
                 'bicycle_rental' => $data['mobilite'],
-                'bus'  => $data['mobilite'],
+                'bus' => $data['mobilite'],
                 'parking' => $data['mobilite'],
                 'tramway' => $data['mobilite'],
                 'arts' => $data['culture'],
@@ -147,18 +149,18 @@ class DefaultController extends Controller
                 'theatre' => $data['culture'],
                 'stadium' => $data['culture'],
                 'museum' => $data['culture'],
-                'zoo'  => $data['culture'],
-                'bar'  => $data['nocturne'],
+                'zoo' => $data['culture'],
+                'bar' => $data['nocturne'],
                 'cafe' => $data['nocturne'],
                 'fast_food' => $data['nocturne'],
-                'pub'  => $data['nocturne'],
+                'pub' => $data['nocturne'],
                 'restaurant' => $data['nocturne'],
                 'casino' => $data['nocturne'],
                 'night_club' => $data['nocturne'],
                 'bank' => $data['commerce'],
                 'bakery' => $data['commerce'],
-                'store'  => $data['commerce'],
-                'mall'  => $data['commerce'],
+                'store' => $data['commerce'],
+                'mall' => $data['commerce'],
                 'supermarket' => $data['commerce'],
                 'clinic' => $data['sante'],
                 'doctors' => $data['sante'],
@@ -167,9 +169,20 @@ class DefaultController extends Controller
                 'chemist' => $data['sante']
             );
 
+            if (isset($_GET['lat']) && isset($_GET['long']))
+            {
+                $lat = $_GET['lat'];
+                $long = $_GET['long'];
+                $coord = array("lat" => $lat, "long" => $long);
+            } else {
+                $coord = array("lat" => 50.6355677, "long" => 3.06204630000002);
+            }
+
+            print_r($coord);
+            
             $json = json_encode($donne);
 
-            $lien = "http://localhost/pfa-perfect-place-api/web/app_dev.php/api/request";
+            /*$lien = "http://localhost/pfa-perfect-place-api/web/app_dev.php/api/request";
             $curl = curl_init();
             $header[] = "Content-Type: application/json";
             curl_setopt($curl, CURLOPT_URL, $lien);
@@ -181,24 +194,20 @@ class DefaultController extends Controller
             $return = curl_exec($curl);
             curl_close($curl);
 
-            $decode = json_decode($return , true);
+            $decode = json_decode($return, true);
 
             $i = 1;
-            while ($decode['areas'][$i]['weight'] < 0.5)
-            {
+            while ($decode['areas'][$i]['weight'] < 0.5) {
                 $i = $i + 1;
             }
             $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
             $radius = $decode['areas'][$i]['radius'];
-
-            $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
-            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
+*/
+            return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
 
 //            return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
         }
-
-        $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
-
+        $coord = array("lat" => 50.6355677, "long" => 3.06204630000002);
 
         return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
     }
