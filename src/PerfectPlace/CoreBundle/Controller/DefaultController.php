@@ -28,10 +28,6 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-
-
-            print_r($data);
-
             //$donne['origin'] = array(50.6355677, 3.0620463);
 
             $donne = array();
@@ -98,9 +94,16 @@ class DefaultController extends Controller
             $radius = $decode['areas'][$i]['radius'];
             */
 
-            $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
+            $lat = $_GET['lat'];
+            $long = $_GET['long'];
+
+            $coord = array("lat" => $lat , "long" =>  $long);
+
+            print_r($coord);
+
             return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
 //            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
+
         }
 
         $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);

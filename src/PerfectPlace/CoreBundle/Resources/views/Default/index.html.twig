@@ -169,7 +169,6 @@
 
 <script type="text/javascript">
 
-
     function initialize() {
         var mapOptions = {
             center: { lat: {{ coord.lat }}, lng: {{ coord.long }} },
@@ -198,11 +197,16 @@
              {
                  marker = new google.maps.Marker({
                      position: location,
-                     map: map
+                     map: map,
+                     draggable: true
                  });
              }
-         }
 
+             var lat = location.lat();
+             var long = location.lng();
+
+             window.location.href = "{{ path('perfect_place_core_particulier') }}?lat=" + lat + "&long=" + long;
+         }
 
 
     google.maps.event.addListener(map, 'click', function(event) {
