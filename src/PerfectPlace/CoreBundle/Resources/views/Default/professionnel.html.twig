@@ -37,7 +37,7 @@
                                 <div class="range-slider round" id="trans" data-slider data-options="display_selector: #transport;start: 0; end: 100; step: 25;">
                                     <span class="range-slider-handle" role="slider" tabindex="0"></span>
                                     <span class="range-slider-active-segment"></span>
-                                    {{ form_row(form.transport, { 'type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
+                                    {{ form_row(form.mobilite, { 'type' : 'hidden', 'label' : ' ', 'value' : '50' }) }}
                                 </div>
                             </div>
                             <div class="large-1 small-2 medium-1 columns no-padding slide-value">
@@ -150,19 +150,46 @@
 
     <script type="text/javascript">
 
+
         function initialize() {
             var mapOptions = {
-                center: { lat: 50.635568, lng: 3.0620460000000094},
+                center: { lat: {{ coord.lat }}, lng: {{ coord.long }} },
                 zoom: 15
             };
             var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
+
+
+            var optionsCercle = {
+                map: map,
+                center: new google.maps.LatLng({{ coord.lat }}, {{ coord.long }}),
+                radius: {{ radius }}
+            };
+            var monCercle = new google.maps.Circle(optionsCercle);
+
+
+
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng);
+            });
+
+            marker = new google.maps.Marker({ position: event.latLng, map: map });
+
         }
+
+
+
+
+
+
         google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
 
 
 {% endblock %}
+
+
 
 
 {#<div class="range-slider" data-slider>
