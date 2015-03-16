@@ -28,14 +28,14 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-         
+
 
             print_r($data);
 
             //$donne['origin'] = array(50.6355677, 3.0620463);
 
             $donne = array();
-            $donne['origin'] = array($long, $lat);
+
             $donne['radius'] = $data['rayon'];
             $donne['criterias'] = array(
                 'subway' => $data['mobilite'],
@@ -98,8 +98,9 @@ class DefaultController extends Controller
             $radius = $decode['areas'][$i]['radius'];
             */
 
-            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView()));
-            //return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
+            $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
+            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
+//            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
         }
 
         $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
@@ -117,8 +118,6 @@ class DefaultController extends Controller
             ->add('sante', 'integer')
             ->add('culture', 'integer')
             ->add('rayon', 'integer')
-            ->add('longitude', 'text')
-            ->add('latitude', 'text')
             ->add('Rechercher', 'submit')
             ->getForm();
 
@@ -128,13 +127,11 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-            $long = floatval($data['longitude']);
-            $lat = floatval($data['latitude']);
 
             //$donne['origin'] = array(50.6355677, 3.0620463);
 
             $donne = array();
-            $donne['origin'] = array($long, $lat);
+//            $donne['origin'] = array($long, $lat);
             $donne['radius'] = $data['rayon'];
             $donne['criterias'] = array(
                 'subway' => $data['mobilite'],
@@ -191,7 +188,10 @@ class DefaultController extends Controller
             $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
             $radius = $decode['areas'][$i]['radius'];
 
-            return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
+            $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
+            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
+
+//            return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
         }
 
         $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
