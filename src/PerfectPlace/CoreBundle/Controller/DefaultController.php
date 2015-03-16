@@ -19,7 +19,8 @@ class DefaultController extends Controller
             ->add('commerce', 'integer')
             ->add('sante', 'integer')
             ->add('rayon', 'integer')
-            ->add('lat', 'integer', array('attr' => array('style' => 'display: none')))
+            ->add('longitude', 'text')
+            ->add('latitude', 'text')
             ->add('Rechercher', 'submit')
             ->getForm();
 
@@ -29,11 +30,13 @@ class DefaultController extends Controller
         {
             $data = $form->getData();
 
-            print_r($data);
+            $long = floatval($data['longitude']);
+            $lat = floatval($data['latitude']);
 
+            //$donne['origin'] = array(50.6355677, 3.0620463);
 
             $donne = array();
-            $donne['origin'] = array(50.6355677, 3.0620463);
+            $donne['origin'] = array($long, $lat);
             $donne['radius'] = $data['rayon'];
             $donne['criterias'] = array(
                 'subway' => $data['mobilite'],
@@ -72,7 +75,6 @@ class DefaultController extends Controller
 
             $json = json_encode($donne);
 
-            /*
             $lien = "http://localhost/pfa-perfect-place-api/web/app_dev.php/api/request";
             $curl = curl_init();
             $header[] = "Content-Type: application/json";
@@ -94,15 +96,16 @@ class DefaultController extends Controller
             }
             $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
             $radius = $decode['areas'][$i]['radius'];
-*/
 
-  //          return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius, 'ok' => 1));
+
+
+            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
         }
 
         $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
-        $radius = 0;
 
-        return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0, 'ok' => 0));
+
+        return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => 0));
     }
 
     public function professionnelAction(Request $request)
