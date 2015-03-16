@@ -19,8 +19,6 @@ class DefaultController extends Controller
             ->add('commerce', 'integer')
             ->add('sante', 'integer')
             ->add('rayon', 'integer')
-            ->add('longitude', 'text')
-            ->add('latitude', 'text')
             ->add('Rechercher', 'submit')
             ->getForm();
 
@@ -32,6 +30,8 @@ class DefaultController extends Controller
 
             $long = floatval($data['longitude']);
             $lat = floatval($data['latitude']);
+
+            print_r($data);
 
             //$donne['origin'] = array(50.6355677, 3.0620463);
 
@@ -75,6 +75,7 @@ class DefaultController extends Controller
 
             $json = json_encode($donne);
 
+            /*
             $lien = "http://localhost/pfa-perfect-place-api/web/app_dev.php/api/request";
             $curl = curl_init();
             $header[] = "Content-Type: application/json";
@@ -96,10 +97,10 @@ class DefaultController extends Controller
             }
             $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
             $radius = $decode['areas'][$i]['radius'];
+            */
 
-
-
-            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
+            return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView()));
+            //return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
         }
 
         $coord = array("lat" => 50.6355677 , "long" =>  3.06204630000002);
