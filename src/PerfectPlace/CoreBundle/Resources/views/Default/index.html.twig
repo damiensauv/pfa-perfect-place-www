@@ -117,6 +117,18 @@
                         </div>
 
                         <div class="row">
+                            <div class="large-12 columns">
+                                {{ form_row(form.longitude) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-12 columns">
+                                {{ form_row(form.latitude) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="large-12 columns text-center white btn-seek">
                                 {{ form_row(form.Rechercher) }}
                             </div>
@@ -219,6 +231,13 @@
 
     google.maps.event.addDomListener(window, 'load', initialize);
 
+    </script>
+
+    {# Test Alex #}
+    <script type="text/javascript">
+        var lat = homeMarker.getPosition().lat();
+        var lng = homeMarker.getPosition().lng();
+        alert("latitude : " + lat + " ; Longitude : " + lng);
     </script>
 
 

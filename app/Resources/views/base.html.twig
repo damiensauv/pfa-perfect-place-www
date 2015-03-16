@@ -52,7 +52,6 @@
                     $('#affichage-icone').addClass('green');
                     $('#affichage-icone').removeClass('fa-toggle-off');
                     $('#affichage-icone').addClass('fa-toggle-on');
-                    $('#affichage-icone').prop('title',  'Masquer les paramètres');
                 }
                 else {
                     $('#parameters').hide();
@@ -64,9 +63,7 @@
                     $('#affichage-icone').addClass('red');
                     $('#affichage-icone').removeClass('fa-toggle-on');
                     $('#affichage-icone').addClass('fa-toggle-off');
-                    $('#affichage-icone').prop('title', 'Afficher les paramètres');
                 }
-                $(document).foundation();
                 $(this).data("clicks", !clicks);
             });
 
@@ -78,11 +75,11 @@
                     $('#map').removeClass('medium-12');
                     $('#map').addClass('large-9');
                     $('#map').addClass('medium-9');
-                    $('#affichage-icone').removeClass('red');
-                    $('#affichage-icone').addClass('green');
-                    $('#affichage-icone').removeClass('fa-toggle-off');
-                    $('#affichage-icone').addClass('fa-toggle-on');
-                    $('#affichage-icone').prop('title',  'Masquer les paramètres');
+                    $('#affichage-icone-nav').removeClass('red');
+                    $('#affichage-icone-nav').addClass('green');
+                    $('#affichage-icone-nav').removeClass('fa-toggle-off');
+                    $('#affichage-icone-nav').addClass('fa-toggle-on');
+                    $('#affichage-icone-nav').prop('title',  'Masquer les paramètres');
                     $("a").on("mouseover",function(){
                         $("span[data-selector=" + $(this).attr('id') + "]").html('Masquer les paramètres');
                     });
@@ -93,11 +90,11 @@
                     $('#map').removeClass('medium-9');
                     $('#map').addClass('large-12');
                     $('#map').addClass('medium-12');
-                    $('#affichage-icone').removeClass('green');
-                    $('#affichage-icone').addClass('red');
-                    $('#affichage-icone').removeClass('fa-toggle-on');
-                    $('#affichage-icone').addClass('fa-toggle-off');
-                    $('#affichage-icone').prop('title', 'Afficher les paramètres');
+                    $('#affichage-icone-nav').removeClass('green');
+                    $('#affichage-icone-nav').addClass('red');
+                    $('#affichage-icone-nav').removeClass('fa-toggle-on');
+                    $('#affichage-icone-nav').addClass('fa-toggle-off');
+                    $('#affichage-icone-nav').prop('title', 'Afficher les paramètres');
                     $("a").on("mouseover",function(){
                         $("span[data-selector=" + $(this).attr('id') + "]").html('Afficher les paramètres');
                     });
