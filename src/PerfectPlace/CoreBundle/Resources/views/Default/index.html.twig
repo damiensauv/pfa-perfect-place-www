@@ -192,17 +192,17 @@
                 var mapOptions = {center: { lat: lat, lng: long }, zoom: 15 };
             }
             var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
-            /*
+
+
              var optionsCercle = {
              map: map,
              center: new google.maps.LatLng(
-            {{ coord.lat }},
-            {{ coord.long }}),
-             radius:
-            {{ radius }}
+                {{ coord.lat }},
+                {{ coord.long }}),
+             radius: {{ radius }}
              };
              var monCercle = new google.maps.Circle(optionsCercle);
-             */
+
             var marker;
             function placeMarker(location) {
                 if (marker) {
