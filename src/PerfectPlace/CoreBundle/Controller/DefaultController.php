@@ -101,7 +101,7 @@ class DefaultController extends Controller
             }
             else
             {
-                $radius = 500;
+                $radius = 0;
             }
 
             return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
@@ -201,7 +201,7 @@ class DefaultController extends Controller
             }
             else
             {
-                $radius = 500;
+                $radius = 0;
             }
 
             return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
