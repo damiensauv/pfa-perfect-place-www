@@ -91,14 +91,18 @@ class DefaultController extends Controller
 
             $decode = json_decode($return , true);
 
-            $i = 0;
-            while ($decode['areas'][$i]['weight'] < 0.5)
-            {
-                $i = $i + 1;
+            if (isset($decode['areas'][0]) == true) {
+                $i = 0;
+                while ($decode['areas'][$i]['weight'] < 0.5) {
+                    $i = $i + 1;
+                }
+                $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
+                $radius = $decode['areas'][$i]['radius'];
             }
-            $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
-            $radius = $decode['areas'][$i]['radius'];
-
+            else
+            {
+                $radius = 500;
+            }
 
             return $this->render('PerfectPlaceCoreBundle:Default:index.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
 
@@ -186,12 +190,19 @@ class DefaultController extends Controller
 
             $decode = json_decode($return, true);
 
-            $i = 1;
-            while ($decode['areas'][$i]['weight'] < 0.5) {
-                $i = $i + 1;
+
+            if (isset($decode['areas'][1]) == true) {
+                $i = 1;
+                while ($decode['areas'][$i]['weight'] < 0.5) {
+                    $i = $i + 1;
+                }
+                $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
+                $radius = $decode['areas'][$i]['radius'];
             }
-            $coord = array("lat" => $decode['areas'][$i]['origin'][0], "long" => $decode['areas'][$i]['origin'][1]);
-            $radius = $decode['areas'][$i]['radius'];
+            else
+            {
+                $radius = 500;
+            }
 
             return $this->render('PerfectPlaceCoreBundle:Default:professionnel.html.twig', array('form' => $form->createView(), 'coord' => $coord, 'radius' => $radius));
 
